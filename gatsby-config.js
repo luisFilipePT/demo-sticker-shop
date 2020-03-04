@@ -1,11 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Sticker Shop`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    name: "Your blog title",
+    keywords: ["tech", "blog", "boop"],
+    siteUrl: 'https://gatsby-theme-terminal.netlify.com',
+    siteImage: 'name-of-open-graph-image.jpg', // pop an image in the static folder to use it as the og:image,
+    profileImage: 'name-of-profile-image.jpg',
+    lang: `eng`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `@pauliescanlon/gatsby-theme-terminal`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
