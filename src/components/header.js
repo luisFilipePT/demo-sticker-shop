@@ -1,36 +1,41 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Heading } from 'theme-ui'
+import { Heading, Box, IconButton, Flex } from "theme-ui"
+import { navigate } from "../../.cache/gatsby-browser-entry"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+  <Flex
+    sx={{
+      justifyContent: "space-around",
+      backgroundColor: "surface",
+      height: 80,
+      paddingY: 20,
+      marginBottom: 20,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-
-      <Heading variant='styles.h1'>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+    <Box>
+      <Link to="/">
+        <Heading variant="styles.h1">{siteTitle}</Heading>
+      </Link>
+    </Box>
+    <Box sx={{ float: "right" }}>
+      <IconButton
+        aria-label="Toggle dark mode"
+        onClick={() => navigate("/cart")}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="#8be9fd"
         >
-          {siteTitle}
-        </Link>
-      </Heading>
-    </div>
-  </header>
+          <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z" />
+        </svg>
+      </IconButton>
+    </Box>
+  </Flex>
 )
 
 Header.propTypes = {
