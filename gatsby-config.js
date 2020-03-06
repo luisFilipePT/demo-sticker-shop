@@ -7,11 +7,11 @@ module.exports = {
     title: `Sticker Shop`,
     description: `Check our awesome stickers !!`,
     author: `@gatsbyjs`,
-    name: "Your blog title",
+    name: "Slides",
     keywords: ["tech", "blog", "boop"],
-    siteUrl: 'https://gatsby-theme-terminal.netlify.com',
-    siteImage: 'name-of-open-graph-image.jpg', // pop an image in the static folder to use it as the og:image,
-    profileImage: 'name-of-profile-image.jpg',
+    siteUrl: "https://gatsby-theme-terminal.netlify.com",
+    siteImage: "name-of-open-graph-image.jpg", // pop an image in the static folder to use it as the og:image,
+    profileImage: "name-of-profile-image.jpg",
     lang: `eng`,
   },
   plugins: [
@@ -53,16 +53,16 @@ module.exports = {
       },
     },
     /*
- * Gatsby's data processing layer begins with “source”
- * plugins. Here the site sources its data from Shopify.
- */
+     * Gatsby's data processing layer begins with “source”
+     * plugins. Here the site sources its data from Shopify.
+     */
     {
-      resolve: 'gatsby-source-shopify2',
+      resolve: "gatsby-source-shopify2",
       options: {
         // The domain name of your Shopify shop. This is required.
         // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
         // 'gatsby-source-shopify-test-shop.myshopify.com'.
-        shopName: 'demo-socks-shop',
+        shopName: "demo-socks-shop",
 
         // An API access token to your Shopify shop. This is required.
         // You can generate an access token in the "Manage private apps" section
@@ -79,7 +79,12 @@ module.exports = {
         verbose: true,
       },
     },
-    `@pauliescanlon/gatsby-theme-terminal`,
+    {
+      resolve: `@pauliescanlon/gatsby-theme-terminal`,
+      options: {
+        source: [`slides`], // can be a string or array of strings
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

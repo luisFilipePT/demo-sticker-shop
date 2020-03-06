@@ -20,6 +20,9 @@ const Header = ({ siteTitle }) => (
       </Link>
     </Box>
     <Box sx={{ float: "right" }}>
+      <Link to="slides">
+        <Heading sx={{ display: "inline-block" }} variant="styles.h2">Slides</Heading>
+      </Link>
       <IconButton
         aria-label="Toggle dark mode"
         onClick={() => navigate("/cart")}

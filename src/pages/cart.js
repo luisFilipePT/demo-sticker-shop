@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Client from "shopify-buy"
 import { Grid, Box, Heading, Message, Button } from "theme-ui"
 import Layout from "../components/layout"
 import { getBasket, clearBasket } from "../utils"
@@ -15,8 +16,36 @@ const Cart = () => {
   }
 
   const checkout = () => {
-    setCart([])
-    clearBasket()
+    const client = Client.buildClient({
+      domain: "demo-socks-shop.myshopify.com",
+      storefrontAccessToken: process.env.SHOPIFY_API_KEY,
+    })
+
+    client.checkout.create().then(checkout => {
+      // Do something with the checkout
+
+      const lineItemsToAdd = [
+        {
+          variantId: "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zMjQ5Njg5MjA1MTU5Ng==",
+          quantity: 1,
+        },
+      ]
+      console.log(checkout)
+      client.checkout
+        .addLineItems(checkout.id, lineItemsToAdd)
+        .then(checkout => {
+          // Do something with the updated checkout
+          console.log('final checkout', checkout) // Array with one additional line item
+          console.log('final checkout', checkout.webUrl) // Array with one additional line item
+              setCart([])
+              clearBasket()
+          window.open(checkout.webUrl)
+        })
+    })
+
+    console.log(client)
+    // setCart([])
+    // clearBasket()
     // window.open(checkout.webUrl)
   }
 
