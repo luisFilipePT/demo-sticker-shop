@@ -13,6 +13,9 @@ module.exports = {
     siteImage: "name-of-open-graph-image.jpg", // pop an image in the static folder to use it as the og:image,
     profileImage: "name-of-profile-image.jpg",
     lang: `eng`,
+    config: {
+      sidebarWidth: 185, // optional,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -62,7 +65,7 @@ module.exports = {
         // The domain name of your Shopify shop. This is required.
         // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
         // 'gatsby-source-shopify-test-shop.myshopify.com'.
-        shopName: "demo-socks-shop",
+        shopName: process.env.SHOPIFY_SHOP_NAME,
 
         // An API access token to your Shopify shop. This is required.
         // You can generate an access token in the "Manage private apps" section

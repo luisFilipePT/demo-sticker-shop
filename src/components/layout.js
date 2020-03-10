@@ -4,8 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Flex } from "theme-ui"
 
 import Header from "./header"
-import "./layout.css"
 import Footer from "./footer"
+
+import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

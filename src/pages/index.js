@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { Heading, Flex, Button, Box } from "theme-ui"
-import { SocialLogins, auth, useAuth } from "gatsby-theme-firebase"
+import { Heading, Flex, Button, Box, Alert } from "theme-ui"
+import { auth, useAuth } from "gatsby-theme-firebase"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import SignIn from "../components/signIn"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -29,10 +30,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Heading variant="styles.h2">
+      <Alert variant="error">
+        This is a Demo Shop. The stickers are mine and no transactions are real!
+      </Alert>
+      <Heading variant="styles.h2" my={10}>
         {data.site.siteMetadata.description} <span role="img">🎉</span>.
       </Heading>
-      <p>Now let's build something great.</p>
       <Image />
       <Flex
         sx={{
@@ -40,18 +43,7 @@ const IndexPage = () => {
           alignItems: "center",
         }}
       >
-        {!isLoggedIn && (
-          <>
-            <Box pt={16}>
-              <Heading variant="styles.h2">
-                Please sign in to start shopping
-              </Heading>
-            </Box>
-            <Box py={16}>
-              <SocialLogins />
-            </Box>
-          </>
-        )}
+        {!isLoggedIn && <SignIn />}
         {isLoggedIn && (
           <>
             <Box py={16}>
@@ -60,7 +52,7 @@ const IndexPage = () => {
                 <span role="emoji">🎉</span>
               </Heading>
             </Box>
-            <Box py={16}>
+            <Box py={20}>
               <Heading variant="styles.h1">
                 <Link to="/products">Buy stickers</Link>
               </Heading>
