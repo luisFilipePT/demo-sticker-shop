@@ -1,18 +1,17 @@
-const cartStorage = window.localStorage;
 
 export const addProductToBasket = product => {
-  const existing = cartStorage.getItem('cart');
+  const existing = window.localStorage.getItem('cart');
 
   if (existing) {
     const parsed = JSON.parse(existing);
-    cartStorage.setItem('cart', JSON.stringify([...parsed, product]))
+    window.localStorage.setItem('cart', JSON.stringify([...parsed, product]))
   } else {
-    cartStorage.setItem('cart', JSON.stringify([product]))
+    window.localStorage.setItem('cart', JSON.stringify([product]))
   }
 }
 
 export const getBasket = () => {
-  const existing = cartStorage.getItem('cart');
+  const existing = window.localStorage.getItem('cart');
 
   if (existing) {
     return JSON.parse(existing)
@@ -22,5 +21,5 @@ export const getBasket = () => {
 }
 
 export const clearBasket = () => {
-  cartStorage.removeItem('cart');
+  window.localStorage.removeItem('cart');
 }
