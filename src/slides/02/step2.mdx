@@ -1,0 +1,51 @@
+---
+title: Step 2 - Create a repository
+author: Luis Filipe
+tags: [GitHub, Source Control, Gatsby, gatsby-cli, Hub]
+embeddedImages:
+  - repo-default-read-me.png
+---
+
+Our "Hello World" is up and running, great
+
+Let's create a Github repository to hold our recently created project
+
+_I will be using [hub](https://hub.github.com/) which in my configuration is aliased to `git` extending this one with some cool features.   
+`Hub` is an extension to command-line git_  
+
+<br />
+
+If you prefer you can switch the next step by one of the alternatives below:
+* Create a repo on the Github interface [instructions](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
+* Using the brand new [github cli](https://cli.github.com/manual/gh_repo_create)
+
+
+In the root of the project run (creates a repo with the folder name on Github)
+```shell
+git create
+```
+
+Create the initial commit adding all files and setting a commit message
+```shell
+git commit -am "Initial commit"
+```
+
+Push all your code to the Github server
+```shell
+git push origin master
+```
+
+If you now head to your Github project page you should see the defaul Gatsby `README`
+
+<EmbeddedImage src={props.embedded.image1} />
+   
+<br />
+<br />   
+
+<Alert variant='secondary'>
+  Coming out soon deploying to Netlify 
+</Alert>
+ 
+
+
+
