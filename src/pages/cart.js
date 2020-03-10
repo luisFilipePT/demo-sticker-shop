@@ -6,9 +6,11 @@ import { getBasket, clearBasket } from "../utils"
 import SEO from "../components/seo"
 
 const Cart = () => {
-  const [cart, setCart] = useState(getBasket())
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
+    setCart(getBasket);
+
     return () => setCart([])
   }, [])
 
