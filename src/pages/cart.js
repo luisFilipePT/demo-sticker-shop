@@ -23,7 +23,7 @@ const Cart = () => {
 
   const checkout = () => {
     const client = Client.buildClient({
-      domain: `${process.env.SHOPIFY_SHOP_NAME}.myshopify.com`,
+      domain: `${process.env.GATSBY_SHOPIFY_SHOP_NAME}.myshopify.com`,
       storefrontAccessToken: process.env.SHOPIFY_API_KEY,
     })
     const lineItemsToAdd = cart.map(item => ({

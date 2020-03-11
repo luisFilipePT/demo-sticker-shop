@@ -13,7 +13,10 @@ The steps will be updated as we go and hopefully we will not take too long :)
 <SourceList>
   {source => (
     <div>
-      {source.map((edge, index) => {
+      {source
+      .sort((a, b) => new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date))
+      .reverse()
+      .map((edge, index) => {
         const {
           frontmatter: { title, path },
           fields: { slug }, 
