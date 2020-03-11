@@ -34,11 +34,10 @@ const IndexPage = () => {
         This is a Demo Shop. The stickers are mine and no transactions are real!
       </Alert>
       <Heading variant="styles.h2" my={10}>
-        {data.site.siteMetadata.description} <span role="img">🎉</span>.
+        {data.site.siteMetadata.description} <span role="img" aria-label="img">🎉</span>.
       </Heading>
       <Image />
-      <Flex
-        sx={{
+      <Flex sx={{
           flexDirection: "column",
           alignItems: "center",
         }}
@@ -49,7 +48,7 @@ const IndexPage = () => {
             <Box py={16}>
               <Heading variant="styles.h2">
                 Welcome back {profile.displayName}
-                <span role="emoji">🎉</span>
+                <span role="img" aria-label="img">🎉</span>
               </Heading>
             </Box>
             <Box py={20}>

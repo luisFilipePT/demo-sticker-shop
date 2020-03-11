@@ -13,11 +13,13 @@ const Footer = () => {
           marginTop: 20,
         }}
       >
-        © {new Date().getFullYear()}, Built by @luis & @david with &nbsp;
+        © {new Date().getFullYear()}, Built by&nbsp;
+        <Link href="https://twitter.com/_luisFilipePT">@luis</Link>&nbsp;&&nbsp;
+        <Link href="https://twitter.com/david_alecrim">@david</Link>&nbsp; with &nbsp;
         <Link href="https://www.gatsbyjs.org">Gatsby</Link>&nbsp;
         <Link href="https://www.netlify.com/">Netlify</Link>&nbsp;
-        <Link href="https://www.gatsbyjs.org">Firebase</Link>&nbsp;
-        <Link href="https://www.gatsbyjs.org">Shopify</Link>
+        <Link href="https://firebase.google.com/">Firebase</Link>&nbsp;
+        <Link href="https://www.shopify.com/">Shopify</Link>
       </Flex>
     </footer>
   )

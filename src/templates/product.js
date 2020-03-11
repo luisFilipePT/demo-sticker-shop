@@ -51,6 +51,9 @@ export const query = graphql`
       images {
         originalSrc
       }
+      variants {
+        id
+      }
     }
   }
 `
