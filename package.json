@@ -25,6 +25,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
+    "react-toast-notifications": "^2.4.0",
     "shopify-buy": "^2.9.1",
     "theme-ui": "^0.3.1"
   },

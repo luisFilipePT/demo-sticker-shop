@@ -1,9 +1,19 @@
 import React from "react"
+import { useToasts } from "react-toast-notifications"
 import { Box, Button, Card, Grid, Heading, Image } from "theme-ui"
 import { navigate } from "gatsby"
 import { addProductToBasket } from "../utils"
 
 const ProductCard = ({ product }) => {
+  const { addToast } = useToasts()
+
+  const addProduct = async () => {
+    const result = await addProductToBasket(product);
+    if (result.status === 'OK') {
+      addToast('Product was added to basket!', { appearance: 'success' })
+    }
+  };
+
   return (
    <Card p={10}>
       <Grid columns={2}>
@@ -23,7 +33,7 @@ const ProductCard = ({ product }) => {
         <Button onClick={() => navigate(`/product/${product.handle}`)}>
           Show Details
         </Button>
-        <Button variant="secondary" onClick={() => addProductToBasket(product)}>
+        <Button variant="secondary" onClick={addProduct}>
           Add to Cart
         </Button>
       </Grid>
