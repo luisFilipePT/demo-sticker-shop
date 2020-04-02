@@ -1,13 +1,16 @@
 
 export const addProductToBasket = product => {
-  const existing = window.localStorage.getItem('cart');
+  return new Promise((resolve) => {
+    const existing = window.localStorage.getItem('cart');
 
-  if (existing) {
-    const parsed = JSON.parse(existing);
-    window.localStorage.setItem('cart', JSON.stringify([...parsed, product]))
-  } else {
-    window.localStorage.setItem('cart', JSON.stringify([product]))
-  }
+    if (existing) {
+      const parsed = JSON.parse(existing);
+      window.localStorage.setItem('cart', JSON.stringify([...parsed, product]))
+    } else {
+      window.localStorage.setItem('cart', JSON.stringify([product]))
+    }
+    resolve({ status: 'OK' })
+  });
 }
 
 export const getBasket = () => {

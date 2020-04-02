@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Client from "shopify-buy"
-import { Grid, Box, Heading, Message, Button } from "theme-ui"
+import { Grid, Box, Heading, Message, Button, Text } from "theme-ui"
 import Layout from "../components/layout"
 import { getBasket, clearBasket } from "../utils"
 import SEO from "../components/seo"
@@ -77,7 +77,7 @@ const Cart = () => {
       )}
       {cart.length === 0 && (
         <Message variant="error" my={40}>
-          <Heading variant="styles.h1">No stickers to checkout!!</Heading>
+          <Text>No stickers to checkout!!</Text>
         </Message>
       )}
     </Layout>
