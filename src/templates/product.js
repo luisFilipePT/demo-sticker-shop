@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Product from "../components/product"
 
 const ProductTemplate = ({ data }) => {
-  const { title, description, priceRange } = data.shopifyProduct
+  const { title, description, priceRange, images } = data.shopifyProduct
 
   return (
     <ToastProvider>
@@ -13,6 +13,7 @@ const ProductTemplate = ({ data }) => {
         title={title}
         description={description}
         priceRange={priceRange}
+        images={images}
       />
     </ToastProvider>
   )

@@ -9,8 +9,10 @@ const Product = ({
   title,
   description,
   priceRange,
+  images,
 }) => {
   const { addToast } = useToasts()
+  const [image] = images;
 
   const addProduct = async () => {
     const result = await addProductToBasket(product);
@@ -23,7 +25,7 @@ const Product = ({
     <Layout>
       <Grid columns={1} gap={30}>
         <Box sx={{ textAlign: "center"}}>
-          <Image src="https://placekitten.com/g/600/600" style={{ maxHeight: '45vh' }}/>
+          <Image src={image.originalSrc} style={{ maxHeight: '45vh' }}/>
         </Box>
         <Container p={4} bg="surface" mb={20}>
         <Grid columns={2}>

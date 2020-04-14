@@ -13,11 +13,7 @@ const ProductsPage = ({ data }) => (
       <Heading variant="styles.h1">Stickers</Heading>
       <Grid columns={2}>
         {data.allShopifyProduct.edges.map(({ node }) => (
-          <>
-            <ProductCard key={node.shopifyId} product={node} />
-            <ProductCard key={node.shopifyId} product={node} />
-            <ProductCard key={node.shopifyId} product={node} />
-          </>
+          <ProductCard key={node.shopifyId} product={node} />
         ))}
       </Grid>
     </Layout>
