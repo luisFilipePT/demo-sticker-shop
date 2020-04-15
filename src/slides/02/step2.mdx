@@ -6,20 +6,21 @@ tags: [GitHub, Source Control, Gatsby, gatsby-cli, Hub]
 embeddedImages:
   - repo-default-read-me.png
 ---
+<Box p={2} mb={2} color="white" bg="surface">
+    <Link href="/slides">Back to tutorial home</Link>
+</Box>
+<br/><br/>
 
-Our "Hello World" is up and running, great
+Our "Hello World" is up and running, great 🎉
 
-Let's create a Github repository to hold our recently created project
+Let's create a Github repository to hold our recently created project.
 
-_I will be using [hub](https://hub.github.com/) which in my configuration is aliased to `git` extending this one with some cool features.   
-`Hub` is an extension to command-line git_  
+## Using Hub
+
+_I will be using [hub](https://hub.github.com/) which in my configuration is aliased to `git` extending this cli tool with some cool features.
+`Hub` is an extension to command-line git_
 
 <br />
-
-If you prefer you can switch the next step by one of the alternatives below:
-* Create a repo on the Github interface [instructions](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
-* Using the brand new [github cli](https://cli.github.com/manual/gh_repo_create)
-
 
 In the root of the project run (creates a repo with the folder name on Github)
 ```shell
@@ -36,11 +37,44 @@ Push all your code to the Github server
 git push origin master
 ```
 
-If you now head to your Github project page you should see the defaul Gatsby `README`
+## Using GitHub cli
+
+In the root of the project run (creates a remote repo)
+```shell
+gh repo create [repo-name]
+```
+
+Push all your code to the Github server
+```shell
+git push origin master
+```
+
+NOTE: if you have problems with authentication, you need to create a `Personal Token` on your GitHub account and use it as the password for the CLI 🙂
+
+
+## Using traditional approach
+
+Go to your Github web page and create a repository: [https://github.com/](https://github.com/)
+
+Copy the url for the repository.
+
+Then add the remote origin
+```shell
+git remote add origin [repo_url]
+```
+
+Push all your code to the Github server
+```shell
+git push origin master
+```
+
+## Result
+
+If you now head to your Github project page you should see the default Gatsby `README`
 
 <EmbeddedImage src={props.embedded.image1} />
 
- 
+
 
 
 

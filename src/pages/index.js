@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { Heading, Flex, Button, Box, Alert } from "theme-ui"
+import { Heading, Flex, Button, Box, Alert, Text } from "theme-ui"
 import { auth, useAuth } from "gatsby-theme-firebase"
 
 import Layout from "../components/layout"
@@ -31,9 +31,9 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Alert variant="error">
-        This is a Demo Shop. The stickers are mine and no transactions are real!
+        This is a Demo Shop. The stickers are dummy ones and no transactions are real!
       </Alert>
-      <Heading variant="styles.h2" my={10}>
+      <Heading variant="styles.h2" my={10} mb={20}>
         {data.site.siteMetadata.description} <span role="img" aria-label="img">🎉</span>.
       </Heading>
       <Image />
@@ -46,10 +46,10 @@ const IndexPage = () => {
         {isLoggedIn && (
           <>
             <Box py={16}>
-              <Heading variant="styles.h2">
-                Welcome back {profile.displayName}
-                <span role="img" aria-label="img">🎉</span>
-              </Heading>
+              <Text>
+                Welcome back, <strong>{profile.displayName}</strong>
+                <span role="img" aria-label="img">&nbsp;🎉</span>
+              </Text>
             </Box>
             <Box py={20}>
               <Heading variant="styles.h1">
