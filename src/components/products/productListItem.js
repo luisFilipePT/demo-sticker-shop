@@ -2,9 +2,9 @@ import React from "react"
 import { useToasts } from "react-toast-notifications"
 import { Box, Button, Card, Grid, Heading, Image } from "theme-ui"
 import { navigate } from "gatsby"
-import { addProductToBasket } from "../utils"
+import { addProductToBasket } from "../../utils"
 
-const ProductCard = ({ product }) => {
+const ProductListItem = ({ product }) => {
   const { addToast } = useToasts()
   const { images } = product;
   const [image] = images;
@@ -42,4 +42,4 @@ const ProductCard = ({ product }) => {
   )
 }
 
-export default ProductCard
+export default ProductListItem

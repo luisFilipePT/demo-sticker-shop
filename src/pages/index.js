@@ -3,10 +3,10 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import { Heading, Flex, Button, Box, Alert, Text } from "theme-ui"
 import { auth, useAuth } from "gatsby-theme-firebase"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import SignIn from "../components/signIn"
+import Layout from "../components/intro/layout"
+import Image from "../components/intro/image"
+import SEO from "../components/intro/seo"
+import SignIn from "../components/intro/signIn"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`

@@ -1,10 +1,8 @@
 import React from "react"
 import { ToastProvider } from "react-toast-notifications"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/intro/layout"
 import { Grid, Heading } from "theme-ui"
-import ProductCard from "../components/productCard"
-import SEO from "../components/seo"
+import SEO from "../components/intro/seo"
 
 const ProductsPage = ({ data }) => (
   <ToastProvider>
@@ -12,9 +10,7 @@ const ProductsPage = ({ data }) => (
       <SEO title="Stickers" />
       <Heading variant="styles.h1">Stickers</Heading>
       <Grid columns={2}>
-        {data.allShopifyProduct.edges.map(({ node }) => (
-          <ProductCard key={node.shopifyId} product={node} />
-        ))}
+        {/* TODO: list the products */}
       </Grid>
     </Layout>
   </ToastProvider>
@@ -22,28 +18,4 @@ const ProductsPage = ({ data }) => (
 
 export default ProductsPage
 
-export const query = graphql`
-  {
-    allShopifyProduct(sort: { fields: [title] }) {
-      edges {
-        node {
-          title
-          shopifyId
-          description
-          handle
-          priceRange {
-            minVariantPrice {
-              amount
-            }
-          }
-          images {
-            originalSrc
-          }
-          variants {
-            id
-          }
-        }
-      }
-    }
-  }
-`
+// TODO: add query for products

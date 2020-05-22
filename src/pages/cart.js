@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import Client from "shopify-buy"
 import { Grid, Box, Heading, Message, Button, Text } from "theme-ui"
-import Layout from "../components/layout"
+import Layout from "../components/intro/layout"
 import { getBasket, clearBasket } from "../utils"
-import SEO from "../components/seo"
+import SEO from "../components/intro/seo"
 
 const Cart = () => {
   const [cart, setCart] = useState([])

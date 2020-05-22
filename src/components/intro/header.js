@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Heading, Box, IconButton, Flex, Grid } from "theme-ui"
-import { navigate } from "../../.cache/gatsby-browser-entry"
+import { navigate } from "../../../.cache/gatsby-browser-entry"
 
 const Header = ({ siteTitle }) => (
   <Flex
@@ -20,20 +20,6 @@ const Header = ({ siteTitle }) => (
       </Link>
     </Box>
     <Grid columns={3}>
-      <Box sx={{ pt: "8px" }}>
-        <Link to="about">
-          <Heading variant="styles.h2">
-            About
-          </Heading>
-        </Link>
-      </Box>
-      <Box sx={{ pt: "8px" }}>
-        <Link to="slides">
-          <Heading variant="styles.h2">
-            Tutorial
-          </Heading>
-        </Link>
-      </Box>
       <Box sx={{ textAlign: "center" }}>
         <IconButton
           aria-label="Navigate to cart"

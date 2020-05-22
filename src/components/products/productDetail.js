@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../intro/layout"
 import { Heading, Box, Button, Grid, Image, Container } from "theme-ui"
 import { useToasts } from "react-toast-notifications"
-import { addProductToBasket } from "../utils";
+import { addProductToBasket } from "../../utils";
 
-const Product = ({
+const ProductDetail = ({
   product,
   title,
   description,
@@ -51,4 +51,4 @@ const Product = ({
   )
 }
 
-export default Product
+export default ProductDetail
