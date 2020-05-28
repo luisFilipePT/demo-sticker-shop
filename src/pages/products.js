@@ -4,7 +4,8 @@ import Layout from "../components/intro/layout"
 import { Grid, Heading } from "theme-ui"
 import SEO from "../components/intro/seo"
 
-const ProductsPage = ({ data }) => (
+// TODO: get the data
+const ProductsPage = () => (
   <ToastProvider>
     <Layout>
       <SEO title="Stickers" />
